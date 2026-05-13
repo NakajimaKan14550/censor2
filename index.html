@@ -428,30 +428,70 @@
             </div>
         </section>
 
-        <section>
-            <h2>【産業的インパクト】解像度と速度のトレードオフ解消</h2>
-            <p>
-                イメージセンサーの転送帯域には物理的な上限があるが、読み出し領域を最適化（2K変換等）することで、特定の空間分解能を維持しつつ、800fpsを超える超高速撮像が可能となる。これにより、以下の領域で革新的なデータ取得が実現する。
-            </p>
-            <div class="grid">
-                <div class="card">
-                    <div style="width: 40px; height: 4px; background: var(--accent-color); margin-bottom: 20px;"></div>
-                    <h3>1. 製造・物流インフラ</h3>
-                    <p>コンベア上を高速で流れる製品に対し、強力な照明と同期した1,000fps超の撮像を行うことで、静止画と同等の精度でAI外観検査を実現する。</p>
-                </div>
-                <div class="card">
-                    <div style="width: 40px; height: 4px; background: var(--accent-color); margin-bottom: 20px;"></div>
-                    <h3>2. 競技・バイオメカニクス</h3>
-                    <p>iPhone等の240fpsでは捕捉できないインパクト時の微細な振動や芝の飛散挙動を可視化し、物理法則に基づいたパフォーマンス分析を可能にする。</p>
-                </div>
-                <div class="card">
-                    <div style="width: 40px; height: 4px; background: var(--accent-color); margin-bottom: 20px;"></div>
-                    <h3>3. 科学技術・R&D</h3>
-                    <p>目に見えない超高速な物理エラーや、ミリ秒以下の過渡現象をデータ化。開発サイクルの短縮と品質向上のためのエビデンスを提供する。</p>
-                </div>
+     <main>
+    <section>
+        <h2>1. ビットレートの物理的定義</h2>
+        <p>ビットレートとは、単位時間（1秒間）あたりに処理・伝送されるデータ量を指す。これはデジタル映像における「情報の密度」であり、解像度が画用紙のサイズ、FPSがパラパラ漫画の枚数であるならば、ビットレートはそこに投入可能な「描画リソース（絵の具の量）」に相当する。</p>
+        
+        <div class="img-container">
+            <img src="bit.png" alt="ビットレート・解像度・FPSの相関図" class="tech-img">
+            <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px;">図1：映像品質を決定する三要素の相関モデル (bit.png)</p>
+        </div>
+
+        <p>情報の「器」がどれほど大きくとも、内部を構成するデータが欠落すれば、視覚的な忠実度は著しく損なわれる。これがビットレート不足による画質劣化の物理的原点である。</p>
+    </section>
+
+    <section>
+        <h2>2. 技術原理：量子化とブロックノイズの発生</h2>
+        <p>ビットレートが不足した際、エンコーダーはデータ量を削減するために情報の量子化（間引き）を強化する。この結果、以下のような現象が顕著に発生する。</p>
+        
+        <div class="grid-box">
+            <div class="info-card">
+                <h3>ブロックノイズ</h3>
+                <p>情報を格子状のブロック単位で近似処理することで、四角いモザイク状の歪みが発生する。特に激しい動きを伴うシーンで発生しやすい。</p>
             </div>
-        </section>
-    </main>
+            <div class="info-card">
+                <h3>テクスチャの消失</h3>
+                <p>微細なディテールが「塗りつぶし」として処理され、被写体の質感が失われる。低ビットレート設定時の代表的な副作用である。</p>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>要素</th>
+                        <th>高くした場合</th>
+                        <th>低くした場合</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>解像度</strong></td>
+                        <td>精細・鮮明な描写</td>
+                        <td>輪郭のジャギー・ボケ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FPS</strong></td>
+                        <td>滑らかな動解像度</td>
+                        <td>コマ落ち・カクつき</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ビットレート</strong></td>
+                        <td>高い質感・低ノイズ</td>
+                        <td>ブロックノイズ・汚染</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. 産業的インパクトと最適化の意義</h2>
+        <p>単にビットレートを上げれば品質は向上するが、それはファイルサイズの増大と伝送コストの上昇を意味する。工学的な「最適化」とは、人間の視覚特性（HVS）を利用し、画質低下を感じさせない最低限のビットレートを維持することにある。</p>
+        <p>この動的なバランス制御は、現代のストリーミングサービスや通信インフラにおいて、ネットワーク帯域の有効活用とユーザー体験の最大化を両立させるための核心技術となっている。</p>
+    </section>
+</main>
 
     <div class="zoom-overlay" id="zoomOverlay">
         <img src="" alt="Zoomed view" id="zoomedImg">
